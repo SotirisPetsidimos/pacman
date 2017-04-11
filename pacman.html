@@ -229,6 +229,9 @@
 
             dot.kill();
 
+            var audio = new Audio('assets/move.mp3');
+            audio.play()
+            
             score += 10;
             scoreText.text = 'Score: ' + score;
             
