@@ -54,6 +54,7 @@
             this.scale.pageAlignHorizontally = true;
             this.scale.pageAlignVertically = true;
 
+
             Phaser.Canvas.setImageRenderingCrisp(this.game.canvas);
 
             this.physics.startSystem(Phaser.Physics.ARCADE);
@@ -106,7 +107,8 @@
 
             this.pacman.play('munch');
             this.move(Phaser.LEFT);
-
+            
+            scoreText = game.add.text(5, 0,'Score: 0', {font: '15px Verdana',  fill: '#FFFF00'});
         },
 
         checkKeys: function () {
