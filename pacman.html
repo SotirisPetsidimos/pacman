@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -16,6 +17,10 @@
 
     <script type="text/javascript">
 
+    var score = 0;
+    var scoreText;    
+        
+        
     var game = new Phaser.Game(448, 496, Phaser.AUTO);
 
     var Pacman = function (game) {
@@ -222,6 +227,9 @@
 
             dot.kill();
 
+            score += 10;
+            scoreText.text = 'Score: ' + score;
+            
             if (this.dots.total === 0)
             {
                 this.dots.callAll('revive');
