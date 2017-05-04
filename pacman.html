@@ -19,7 +19,8 @@
 
     var score = 0;
     var scoreText;    
-        
+    var lives = 3;
+    var livesText;
         
     var game = new Phaser.Game(448, 496, Phaser.AUTO);
 
@@ -113,6 +114,7 @@ z
             this.move(Phaser.LEFT);
             
             scoreText = game.add.text(0, 250,'Score: 0', {font: '15px Verdana',  fill: '#FFFF00'});
+            livesText = game.add.text(0, 250,'Lives: 3', {font: '15px Verdana',  fill: '#FFFF01'});
         },
 
         checkKeys: function () {
