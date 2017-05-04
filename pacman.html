@@ -29,7 +29,7 @@
         this.map = null;
         this.layer = null;
         this.pacman = null;
-z
+
         this.safetile = 14;
         this.gridsize = 16;
 
@@ -39,7 +39,7 @@ z
         this.marker = new Phaser.Point();
         this.turnPoint = new Phaser.Point();
 
-,        this.directions = [ null, null, null, null, null ];
+        this.directions = [ null, null, null, null, null ];
         this.opposites = [ Phaser.NONE, Phaser.RIGHT, Phaser.LEFT, Phaser.DOWN, Phaser.UP ];
 
         this.current = Phaser.NONE;
@@ -70,7 +70,7 @@ z
             this.load.crossOrigin = 'anonymous';
 
             this.load.image('dot', 'assets/dot.png');
-            this.load.image('cherry', 'assets/cherry.png');
+           // this.load.image('cherry', 'assets/cherry.png');
             this.load.image('tiles', 'assets/pacman-tiles.png');
             this.load.spritesheet('pacman', 'assets/pacman.png', 32, 32);
             this.load.tilemap('map', 'assets/pacman-map.json', null, Phaser.Tilemap.TILED_JSON);
@@ -87,15 +87,15 @@ z
             this.layer = this.map.createLayer('Pacman');
 
             this.dots = this.add.physicsGroup();
-            this.cherry = this.add.physicsGroup();
+            //this.cherry = this.add.physicsGroup();
 
-            this.map.createFromTiles(7, this.safetile, 'dot','cherry', this.layer, this.dots, this.cherry);
+            this.map.createFromTiles(7, this.safetile, 'dot', this.layer, this.dots, this.cherry);
 
             //  The dots will need to be offset by 6px to put them back in the middle of the grid
             this.dots.setAll('x', 6, false, false, 1);
             this.dots.setAll('y', 6, false, false, 1);
-            this.cherry.setAll('x', 6, false, false, 1);
-            this.cherry.setAll('y', 6, false, false, 1);
+           // this.cherry.setAll('x', 6, false, false, 1);
+            //this.cherry.setAll('y', 6, false, false, 1);
 
             //  Pacman should collide with everything except the safe tile
             this.map.setCollisionByExclusion([this.safetile], true, this.layer);
