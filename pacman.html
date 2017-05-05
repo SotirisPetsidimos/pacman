@@ -248,11 +248,29 @@
             }
 
         },
+        
+         eatCherry: function (pacman, cherry) {
+
+            cherry.kill();
+
+            var audio = new Audio('assets/pacman_eatfruit.wav');
+            audio.play()
+            
+            score += 100;
+            scoreText.text = 'Score: ' + score;
+            
+            if (this.dots.total === 0)
+            {
+                this.dots.callAll('revive');
+            }
+
+        },
 
         update: function () {
           
             this.physics.arcade.collide(this.pacman, this.layer);
             this.physics.arcade.overlap(this.pacman, this.dots, this.eatDot, null, this);
+            this.physics.arcade.overlap(this.pacman, this.cherries, this.eatCherry, null, this);
 
             this.marker.x = this.math.snapToFloor(Math.floor(this.pacman.x), this.gridsize) / this.gridsize;
             this.marker.y = this.math.snapToFloor(Math.floor(this.pacman.y), this.gridsize) / this.gridsize;
