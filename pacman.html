@@ -132,21 +132,21 @@
 
             //  Remove the next 2 lines if running locally
 
-            this.load.baseURL = 'https://billtsolis.github.io/pacman/';
+            this.load.baseURL = 'https://sotirispetsidimos.github.io/pacman/';
 
             this.load.crossOrigin = 'anonymous';
 
 
 
-            this.load.image('dot', 'assets/ring.png');
+            this.load.image('dot', 'assets/dot.png');
 
-            this.load.image('dot2', 'assets/ringBonus.png');
+            this.load.image('cherry', 'assets/cherry.png');
 
             
 
             this.load.image('tiles', 'assets/pacman-tiles.png');
 
-            this.load.spritesheet('pacman', 'assets/sonic.png', 32, 32);
+            this.load.spritesheet('pacman', 'assets/pacman.png', 32, 32);
 
             this.load.tilemap('map', 'assets/pacman-map.json', null, Phaser.Tilemap.TILED_JSON);
 
@@ -176,7 +176,7 @@
 
             this.dots = this.add.physicsGroup();
 
-            this.dots2 = this.add.physicsGroup();
+            this.cherries = this.add.physicsGroup();
 
             
 
@@ -184,7 +184,7 @@
 
             this.map.createFromTiles(7, this.safetile, 'dot', this.layer, this.dots);
 
-            this.map.createFromTiles(35, this.safetile, 'dot2', this.layer, this.dots2);
+            this.map.createFromTiles(35, this.safetile, 'cherry', this.layer, this.cherries);
 
 
 
@@ -194,9 +194,9 @@
 
             this.dots.setAll('y', 6, false, false, 1);
 
-            this.dots2.setAll('x', 6, false, false, 1);
+            this.cherries.setAll('x', 6, false, false, 1);
 
-            this.dots2.setAll('y', 6, false, false, 1);
+            this.cherries.setAll('y', 6, false, false, 1);
 
 
 
@@ -232,9 +232,9 @@
 
              
 
-            scoreText = game.add.text(0, 20,'Rings: 0', {font: '20px 	Lucida Console',  fill: '#FEF300'});
+            scoreText = game.add.text(0, 250,'Score: 0', {font: '20px 	Lucida Console',  fill: '#FEF300'});
 
-            lifeText = game.add.text(0,0,'Life: 2', {font: '20px 	Lucida Console',  fill: '#FF0000'});
+            livesText = game.add.text(0, 265,'Life: 2', {font: '20px 	Lucida Console',  fill: '#FF0000'});
 
 
 
@@ -480,11 +480,11 @@
 
             score += 1;
 
-            scoreText.text = 'Rings : ' + score;
+            scoreText.text = 'Score : ' + score;
 
              
 
-            var audio = new Audio('assets/Ring Sound.mp3');
+            var audio = new Audio('assets/pop.wav');
 
             audio.play()
 
@@ -504,19 +504,19 @@
 
         
 
-        eatDot2: function (pacman, dot2) {
+        eatCherry: function (pacman, cherry) {
 
 
 
-            dot2.kill();
+            cherry.kill();
 
             score += 20;
 
-            scoreText.text = 'Rings : ' + score;
+            scoreText.text = 'Score : ' + score;
 
   
 
-            var audio = new Audio('assets/Bonus Sound.mp3');
+            var audio = new Audio('assets/pacman_eatfruit.wav');
 
             audio.play()
 
@@ -526,7 +526,7 @@
 
             {
 
-                this.dots2.callAll('revive');
+                this.cherries.callAll('revive');
 
             }
 
@@ -546,7 +546,7 @@
 
             this.physics.arcade.overlap(this.pacman, this.dots, this.eatDot, null, this);
 
-            this.physics.arcade.overlap(this.pacman, this.dots2, this.eatDot2, null, this);
+            this.physics.arcade.overlap(this.pacman, this.cherries, this.eatCherry, null, this);
 
 
 
