@@ -21,6 +21,9 @@
 
     var lives = 3;
     var livesText;
+        
+    var bonus = 0;
+    var bonusText;
 
     var game = new Phaser.Game(448, 496, Phaser.AUTO);
 
@@ -108,7 +111,8 @@
             this.move(Phaser.LEFT);
 
             scoreText = game.add.text(0, 250,'Score: 0', {font: '15px Verdana',  fill: '#FFFF00'});
-            livesText = game.add.text(0, 265,'Lives: 3', {font: '15px Verdana',  fill: '#FFFF00'});
+            bonusText = game.add.text(0, 265,'Bonus: +0', {font: '15px Verdana',  fill: '#FFFF00'});
+            livesText = game.add.text(0, 280,'Lives: 3', {font: '15px Verdana',  fill: '#FFFF00'});
         },
 
 
@@ -237,7 +241,7 @@
                 this.dots.callAll('revive');
             }
             
-            if (score % 810 === 0)
+            if (score % 770 === 0)
             {
             	this.cherries.callAll('revive');
             }
@@ -252,7 +256,8 @@
 
             score += 100;
             scoreText.text = 'Score: ' + score;
-           
+            bonus += 100;
+            bonusText.text = 'Bonus: +' + bonus;
         }, 
 
         update: function () {
