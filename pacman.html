@@ -248,10 +248,10 @@
             score += 100;
             scoreText.text = 'Score: ' + score;
 
-        //    if (this.dots.total === 0)
-         //   {
-          //      this.dots.callAll('revive');
-          //  }
+            if (score % 500 = 0)
+            {
+            	this.cherries.callall('revive');
+            }
         }, 
 
         update: function () {
