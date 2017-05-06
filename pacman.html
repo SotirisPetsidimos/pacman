@@ -236,7 +236,11 @@
             {
                 this.dots.callAll('revive');
             }
-          
+            
+            if (score % 500 === 0)
+            {
+            	this.cherries.callAll('revive');
+            }
         },
         
        eatCherry: function (pacman, cherry) {
@@ -272,10 +276,7 @@
                 this.turn();
             }
               
-            if (score % 500 === 0)
-            {
-            	this.cherries.callAll('revive');
-            }
+         
         }
     };
 
