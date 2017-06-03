@@ -270,7 +270,7 @@
         },
         
         enterPortal1: function (pacman, Portal1) {
-            
+            pacman.kill();
             this.pacman = this.add.sprite((25 * 16) + 8, (4 * 16) + 8, 'pacman',0);
             this.move(Phaser.LEFT);
         },
