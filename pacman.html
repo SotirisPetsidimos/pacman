@@ -67,6 +67,7 @@
             this.load.baseURL = 'https://sotirispetsidimos.github.io/pacman/';
             this.load.crossOrigin = 'anonymous';
 
+
             this.load.image('dot', 'assets/dot.png');
             this.load.image('cherry', 'assets/cherry.png');
             this.load.image('Portal1', 'assets/Portal1.png');
@@ -86,12 +87,13 @@
 
             this.dots = this.add.physicsGroup();
             this.cherries = this.add.physicsGroup();
-            this.Portals1 = this.add.physicsGroup();            this.Portals2 = this.add.physicsGroup();
+            this.Portals1 = this.add.physicsGroup();
+            this.Portals2 = this.add.physicsGroup();
 
             this.map.createFromTiles(7, this.safetile, 'dot', this.layer, this.dots);
             this.map.createFromTiles(35, this.safetile, 'cherry', this.layer, this.cherries);
-            this.map.createFromTiles(35, this.safetile, 'Portal1', this.layer, this.Portals1);
-            this.map.createFromTiles(35, this.safetile, 'Portal2', this.layer, this.Portals2);
+            this.map.createFromTiles(36, this.safetile, 'Portal1', this.layer, this.Portals1);
+            this.map.createFromTiles(37, this.safetile, 'Portal2', this.layer, this.Portals2);
 
             //  The dots will need to be offset by 6px to put them back in the middle of the grid
             this.dots.setAll('x', 6, false, false, 1);
