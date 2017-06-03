@@ -270,14 +270,14 @@
         },
         
         enterPortal1: function (pacman, Portal1) {
-            pacman.kill();
-            this.pacman = this.add.sprite((25 * 16) + 8, (4 * 16) + 8, 'pacman',0);
+            
+            pacman.moveTo((25 * 16) + 8, (4 * 16) + 8);
             this.move(Phaser.LEFT);
         },
         
         enterPortal2: function (pacman, Portal2) {
             
-            this.pacman = this.add.sprite((2 * 16) + 8, (4 * 16) + 8, 'pacman',0);
+            pacman.moveTo((2 * 16) + 8, (4 * 16) + 8);
             this.move(Phaser.RIGHT);
         },
 
