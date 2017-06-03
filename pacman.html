@@ -239,7 +239,7 @@
 
             dot.kill();
 
-            var audio = new Audio('assets/pop.wav');
+.            var audio = new Audio('assets/pop.wav');
             audio.play()
 
             score += 10;
@@ -270,7 +270,7 @@
         },
         
         enterPortal1: function (pacman, Portal1) {
-            this.pacman.move((24 * 16) + 8, (4 * 16) + 8);
+            this.pacman.body.move((24 * 16) + 8, (4 * 16) + 8);
           //  pacman.moveTo((24 * 16) + 8, (4 * 16) + 8);
           //  this.move(Phaser.LEFT);
         },
