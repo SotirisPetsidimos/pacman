@@ -270,14 +270,14 @@
         },
         
         enterPortal1: function (pacman, Portal1) {
-            
-            pacman.moveTo((24 * 16) + 8, (4 * 16) + 8);
+            this.pacman.body.reset((24 * 16) + 8, (4 * 16) + 8);
+          //  pacman.moveTo((24 * 16) + 8, (4 * 16) + 8);
           //  this.move(Phaser.LEFT);
         },
         
         enterPortal2: function (pacman, Portal2) {
-            
-            pacman.moveTo((3 * 16) + 8, (4 * 16) + 8);
+             this.pacman.body.reset((3 * 16) + 8, (4 * 16) + 8);
+           // pacman.moveTo((3 * 16) + 8, (4 * 16) + 8);
           //  this.move(Phaser.RIGHT);
         },
 
