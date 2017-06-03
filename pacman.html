@@ -188,7 +188,6 @@
             //  Grid align before turning
             this.pacman.x = this.turnPoint.x;
             this.pacman.y = this.turnPoint.y;
-
             this.pacman.body.reset(this.turnPoint.x, this.turnPoint.y);
 
             this.move(this.turning);
@@ -239,7 +238,7 @@
 
             dot.kill();
 
-.            var audio = new Audio('assets/pop.wav');
+            var audio = new Audio('assets/pop.wav');
             audio.play()
 
             score += 10;
