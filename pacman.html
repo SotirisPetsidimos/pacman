@@ -267,7 +267,19 @@
             scoreText.text = 'Score: ' + score;
             bonus += 100;
             bonusText.text = 'Bonus: +' + bonus;
-        }, 
+        },
+        
+        enterPortal1: function (pacman, Portal1) {
+            
+            this.pacman = this.add.sprite((25 * 16) + 8, (4 * 16) + 8, 'pacman',0);
+            this.move(Phaser.LEFT);
+        },
+        
+        enterPortal2: function (pacman, Portal2) {
+            
+            this.pacman = this.add.sprite((2 * 16) + 8, (4 * 16) + 8, 'pacman',0);
+            this.move(Phaser.RIGHT);
+        },
 
         update: function () {
 
