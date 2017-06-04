@@ -269,17 +269,13 @@
         },
         
         enterPortal1: function (pacman, Portal1) {
-            
            pacman.reset((24 * 16) + 8, (4 * 16) + 8);
-            //this.pacman.body.moveTo((24 * 16) + 8, (4 * 16) + 8);
-          //  pacman.moveTo((24 * 16) + 8, (4 * 16) + 8);
-          //  this.move(Phaser.LEFT);
+           this.move(Phaser.LEFT);
         },
         
         enterPortal2: function (pacman, Portal2) {
-             this.pacman.moveTo((3 * 16) + 8, (4 * 16) + 8);
-           // pacman.moveTo((3 * 16) + 8, (4 * 16) + 8);
-          //  this.move(Phaser.RIGHT);
+             pacman.reset((3 * 16) + 8, (4 * 16) + 8);
+             this.move(Phaser.RIGHT);
         },
 
         update: function () {
