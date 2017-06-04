@@ -270,7 +270,7 @@
         
         enterPortal1: function (pacman, Portal1) {
             
-            this.pacman.callAll('sprite.moveTo','sprite',(24 * 16) + 8, (4 * 16) + 8);
+           pacman.reset((24 * 16) + 8, (4 * 16) + 8);
             //this.pacman.body.moveTo((24 * 16) + 8, (4 * 16) + 8);
           //  pacman.moveTo((24 * 16) + 8, (4 * 16) + 8);
           //  this.move(Phaser.LEFT);
